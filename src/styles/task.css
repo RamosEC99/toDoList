@@ -1,0 +1,27 @@
+.task-object{
+    background-color: rgb(6, 83, 150);
+    margin-left: 20px;
+    min-height: 50px;
+    display: block;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: #444 3px 3px;
+    margin-top: 10px;
+}
+
+.task-object:hover{
+    box-shadow: #222 3px 5px;
+}
+.task-title{
+    color: white;
+    font-size: 15px;
+    line-height: 50px;
+    padding-left: 15px;
+}
+.status-text{
+    color: white;
+    margin-left: 50px ;
+}
+.icon-task{
+    
+}
