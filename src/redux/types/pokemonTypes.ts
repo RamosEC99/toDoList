@@ -8,7 +8,7 @@ export interface PokemonFail {
     type: typeof POKEMON_FAIL
 }
 
-export const POKEMON_SUCCESS = 'PKEMON_SUCCESS'
+export const POKEMON_SUCCESS = 'POKEMON_SUCCESS'
 export interface PokemonSuccess {
     type: typeof POKEMON_SUCCESS,
     payload: {
