@@ -7,7 +7,7 @@ export const getPokemon =(pokemon:string)=>async (dispatch:Dispatch<PokemonDispa
             type:POKEMON_LOADING
         })
 
-        const res = await axios.instance.get(`/pokemon/${pokemon}`)
+        const res = await axios.get(`/pokemon/${pokemon}`)
 
         dispatch({
             type:POKEMON_SUCCESS,

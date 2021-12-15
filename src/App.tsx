@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from 'react';
-import './index.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { RootStore } from './redux/store'
 import { getPokemon } from './redux/actions/pokemonActions'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Form } from 'react-bootstrap';
+import Pokemon from './components/pokemon'
 
 function App(): JSX.Element {
     const dispatch = useDispatch()
@@ -10,14 +12,35 @@ function App(): JSX.Element {
     const pokemonState = useSelector((state: RootStore) => state.pokemon)
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        e.preventDefault();
         setPokemonName(e.target.value)
     }
-    const handleSubmit = () => dispatch(getPokemon(pokemonName))
-    console.log(pokemonState);
+    const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        dispatch(getPokemon(pokemonName))
+    }
     return (
         <Fragment >
-            <input type="text" onChange={handleChange} />
-            <button type="submit" onClick={handleSubmit}>Search</button>
+            <div className="container">
+                <Form onSubmit={handleSubmit}>
+                    <Form.Group className="mb-3">
+                        <Form.Label>Pokemon Name</Form.Label>
+                        <Form.Control type="text" placeholder="Pikachu" onChange={handleChange}/>
+                        <Form.Text className="text-muted">
+                            Put the pokemon names you want to know more about it.
+                        </Form.Text>
+                        
+                    </Form.Group>
+                    <Button type="submit" variant='primary'>Search</Button>
+                </Form>
+                {
+                    pokemonState.pokemon&&(
+                        <Pokemon PokemonInfo={pokemonState}/>
+                    )
+                }
+                
+
+            </div>
             
         </Fragment>
     );
