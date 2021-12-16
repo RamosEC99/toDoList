@@ -3,9 +3,8 @@ phases:
   install:
     commands:
     - apt install curl
-    - curl -fsSL https://deb.nodesource.com/setup_12.x | -E bash -
-    - apt install -y nodejs
-    - apt install -y npm
+    - apt install nodejs
+    - apt install npm
   pre_build:
     commands:
     - npm i
