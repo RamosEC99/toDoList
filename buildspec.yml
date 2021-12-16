@@ -2,9 +2,10 @@ version: 0.2
 phases:
   install:
     commands:
-    - apt install curl
-    - apt install nodejs
-    - apt install npm
+    - echo Installing Node 12...
+      - curl -sL https://deb.nodesource.com/setup_12.x | bash -
+      - apt install -y nodejs
+      - apt install -y npm
   pre_build:
     commands:
     - npm i
