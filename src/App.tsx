@@ -40,6 +40,7 @@ function App(): JSX.Element {
                         <Pokemon PokemonInfo={pokemonState}/>
                     )
                 }
+                <p>Ya funciona el ci/cd</p>
                 
 
             </div>
