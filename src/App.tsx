@@ -17,7 +17,9 @@ function App(): JSX.Element {
     }
     const handleSubmit = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        dispatch(getPokemon(pokemonName))
+        if(pokemonName){
+            dispatch(getPokemon(pokemonName))
+        }
     }
     return (
         <Fragment >
@@ -25,7 +27,7 @@ function App(): JSX.Element {
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3">
                         <Form.Label>Pokemon Name</Form.Label>
-                        <Form.Control type="text" placeholder="Pikachu" onChange={handleChange}/>
+                        <Form.Control type="text" placeholder="pikachu" onChange={handleChange}/>
                         <Form.Text className="text-muted">
                             Put the pokemon names you want to know more about it.
                         </Form.Text>
