@@ -2,8 +2,8 @@ version: 0.2
 phases:
   install:
     commands:
-    - curl -fsSL https://deb.nodesource.com/setup_12.x | sudo -E bash -
     - apt install -y nodejs
+    - apt install -y npm
   pre_build:
     commands:
     - npm i
